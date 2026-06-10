@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://greenshoresenviro.com/sitemap.xml
+Sitemap: https://manuacgithub.github.io/greenshoresenviro/sitemap.xml
