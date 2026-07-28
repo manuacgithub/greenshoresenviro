@@ -51,7 +51,7 @@ a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 
 .container {
-  max-width: 1160px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -120,7 +120,7 @@ ul { list-style: none; }
             text-align: center;
         }
 
-        .epr-section .hero h1 {
+        .epr-section .hero h4 {
             font-family: var(--font-head);
             font-size: 2rem;
             margin: 0 0 20px 0;
@@ -298,7 +298,7 @@ ul { list-style: none; }
 
         /* --- RESPONSIVE ADAPTATIONS --- */
         @media (max-width: 768deg) {
-            .epr-section .hero h1 { font-size: 2rem; }
+            .epr-section .hero h4 { font-size: 2rem; }
             .epr-section .grid-categories { grid-template-columns: 1fr; }
             .epr-section .lifecycle-step { flex-direction: column; }
             .epr-section .step-label { padding: 15px; min-width: auto; justify-content: flex-start; }
@@ -430,9 +430,14 @@ ul { list-style: none; }
   line-height: 1.22;
   color: var(--dark);
   margin-bottom: 16px;
+  font-weight: bold;
 }
 .section-title.center { text-align: center; }
-
+.section-title-green{
+    color: var(--primary-green);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
 .section-sub {
   color: var(--gray-600);
   max-width: 620px;
@@ -464,7 +469,7 @@ section, footer { isolation: isolate; }
 
 #navbar.scrolled .logo-text { color: var(--green-700); }
 #navbar.scrolled .nav-links a { color: var(--green-400); }
-#navbar.scrolled .nav-links a:hover { color: var(--green-400); }
+#navbar.scrolled .nav-links a:hover { color: var(--green-400); font-size: 18px;}
 #navbar.scrolled .hamburger span { background: var(--green-400); }
 
 @media(min-width: 767px){
@@ -505,7 +510,6 @@ section, footer { isolation: isolate; }
   font-weight: 500;
   transition: var(--transition);
 }
-.nav-links a:hover { color: var(--white); }
 
 .hamburger {
   display: none;
@@ -573,7 +577,7 @@ h1.hero-tag,
   margin-bottom: 24px;
 }
 
-.hero-content h1 {
+.hero-content h4 {
   font-family: var(--font-head);
   font-size: clamp(2.2rem, 5vw, 3.8rem);
   line-height: 1.15;
@@ -795,7 +799,7 @@ h1.hero-tag,
   border-bottom: 1px solid var(--gray-200);
 }
 .why-header .section-tag { color: var(--green-600); }
-.why-header .section-title { color: var(--dark); max-width: 520px; }
+.why-header .section-title { color: var(--dark); }
 .why-intro {
   color: var(--gray-600);
   font-size: 1rem;
@@ -1279,4 +1283,48 @@ h1.hero-tag,
 
 
 
+
+
+
+/* customised css */
+.img-responsive{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.mt-72px-navbar{
+  margin-top: 72px;
+}
+@media (max-width: 768px) {
+  /* Ensure hamburger icon lines are dark green by default when bar is white */
+  .hamburger span {
+    background: var(--green-700);
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 72px; /* Align properly below header height */
+    right: -100%;
+    height: auto;
+    max-height: calc(100vh - 90px);
+    width: min(320px, 90%);
+    background: var(--green-600);
+    border-radius: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 32px 24px;
+    gap: 20px;
+    transition: right 0.35s ease;
+    z-index: 9998;
+    box-shadow: -4px 10px 30px rgba(0,0,0,.25);
+    overflow-y: auto;
+  }
+
+  .nav-links.open {
+    right: 16px; /* Pops out cleanly on top-right */
+  }
+}
+
+/* customised css */
 

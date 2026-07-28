@@ -18,28 +18,23 @@
   });
 }());
 
-// Hamburger / mobile nav toggle
-(function () {
-  var hamburger = document.getElementById('hamburger');
-  var navLinks  = document.getElementById('navLinks');
-  if (!hamburger || !navLinks) return;
-  hamburger.addEventListener('click', function () {
-    this.classList.toggle('open');
-    navLinks.classList.toggle('open');
-  });
-  navLinks.querySelectorAll('a').forEach(function (link) {
-    link.addEventListener('click', function () {
-      hamburger.classList.remove('open');
-      navLinks.classList.remove('open');
-    });
-  });
-}());
 
-// Shrink navbar on scroll
-(function () {
-  var navbar = document.getElementById('navbar');
-  if (!navbar) return;
-  window.addEventListener('scroll', function () {
-    navbar.classList.toggle('scrolled', window.scrollY > 40);
-  });
-}());
+// Dynamic Hamburger / Mobile Nav Toggle
+document.addEventListener('click', function (e) {
+  var hamburger = e.target.closest('#hamburger');
+  var navLink = e.target.closest('#navLinks a');
+  var navLinks = document.getElementById('navLinks');
+  var hamburgerBtn = document.getElementById('hamburger');
+
+  // Toggle open on hamburger click
+  if (hamburger && navLinks) {
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  }
+
+  // Close nav on link click inside mobile menu
+  if (navLink && navLinks && hamburgerBtn) {
+    hamburgerBtn.classList.remove('open');
+    navLinks.classList.remove('open');
+  }
+});
